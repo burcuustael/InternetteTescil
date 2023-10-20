@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace InternetteTescil.Entities.Entities;
 
-public class Costumer
+public class Customer
 {
     public int Id { get; set; }
 

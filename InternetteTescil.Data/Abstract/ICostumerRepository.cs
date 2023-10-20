@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace InternetteTescil.Data.Abstract
 {
-    public interface ICostumerRepository : IRepository<Costumer>
+    public interface ICostumerRepository : IRepository<Customer>
     {
-        Task<IEnumerable<Costumer>> GetAllCostumerByOrdersAsync();
+        Task<IEnumerable<Customer>> GetAllCostumerByOrdersAsync();
     }
 }

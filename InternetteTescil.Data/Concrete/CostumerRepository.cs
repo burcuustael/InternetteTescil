@@ -1,23 +1,18 @@
 ﻿using InternetteTescil.Data.Abstract;
 using InternetteTescil.Entities.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InternetteTescil.Data.Concrete
 {
-    public class CostumerRepository : Repository<Costumer>, ICostumerRepository
+    public class CostumerRepository : Repository<Customer>, ICostumerRepository
     {
         public CostumerRepository(InternetTescilContext _context) : base(_context)
         {
         }
 
-        public async Task<IEnumerable<Costumer>> GetAllCostumerByOrdersAsync()
+        public async Task<IEnumerable<Customer>> GetAllCostumerByOrdersAsync()
         {
-            return await context.Costumers.Include(c=>c.Orders).ToListAsync();
+            return await context.Customers.Include(c=>c.Orders).ToListAsync();
         }
     }
 }

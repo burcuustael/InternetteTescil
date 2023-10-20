@@ -15,5 +15,5 @@ public class Order
 
     public DateTime Orderdate { get; set; }
 
-    public virtual Costumer Customer { get; set; } = null!;
+    public virtual Customer Customer { get; set; } = null!;
 }

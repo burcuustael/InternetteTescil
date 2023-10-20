@@ -1,17 +1,15 @@
 ﻿using InternetteTescil.Entities.Entities;
 using InternetteTescil.Service.Abstract;
-using InternetteTescil.Service.Concrete;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InternetteTescil.WebUI.Controllers
 {
     public class CostumerController : Controller
     {
-        private readonly IService<Costumer> _serviceCostumer;
+        private readonly IService<Customer> _serviceCostumer;
         private readonly ICostumerService _costumterService;
 
-        public CostumerController(IService<Costumer> serviceCostumer, ICostumerService costumterService)
+        public CostumerController(IService<Customer> serviceCostumer, ICostumerService costumterService)
         {
             _serviceCostumer = serviceCostumer;
             _costumterService = costumterService;
@@ -21,7 +19,7 @@ namespace InternetteTescil.WebUI.Controllers
         public async Task<ActionResult> CostumersByOrders()
         {
             var model = await _costumterService.GetAllCostumerByOrdersAsync();
-            return View();
+            return View(model);
 
         }
 
@@ -67,7 +65,7 @@ namespace InternetteTescil.WebUI.Controllers
         // POST: CostumerController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Costumer costumer)
+        public ActionResult Create(Customer costumer)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +95,7 @@ namespace InternetteTescil.WebUI.Controllers
     
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id,Costumer costumer)
+        public ActionResult Edit(int id, Customer costumer)
         {
             try
             {
@@ -121,7 +119,7 @@ namespace InternetteTescil.WebUI.Controllers
       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id,Costumer costumer)
+        public ActionResult Delete(int id, Customer costumer)
         {
             try
             {

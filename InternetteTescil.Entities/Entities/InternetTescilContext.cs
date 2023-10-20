@@ -15,7 +15,7 @@ public partial class InternetTescilContext : DbContext
     {
     }
 
-    public virtual DbSet<Costumer> Costumers { get; set; }
+    public virtual DbSet<Customer> Customers { get; set; }
 
     public virtual DbSet<Order> Orders { get; set; }
 
@@ -25,7 +25,7 @@ public partial class InternetTescilContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Costumer>(entity =>
+        modelBuilder.Entity<Customer>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Costumer__3214EC275443A618");
 
